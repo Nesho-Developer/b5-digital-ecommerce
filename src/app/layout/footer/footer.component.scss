@@ -1,0 +1,25 @@
+.footer {
+  background: var(--c1-j, #ffffff);
+  padding: 64px 45px 64px 45px;
+  gap: 48px;
+  flex-shrink: 0;
+}
+.section-title {
+  color: var(--c1-a, #151515);
+  text-align: left;
+  font: 600 18px 'Poppins';
+  padding-bottom: 16px;
+}
+.footer-link {
+  color: var(--c2-a, #6a983c);
+  text-align: left;
+  font: 400 14px 'Open Sans';
+  padding-bottom: 16px;
+  text-decoration: unset;
+}
+.copyright {
+  color: var(--c1-a, #151515);
+  text-align: left;
+  font: 400 14px 'Open Sans';
+  margin-top: 48px;
+}

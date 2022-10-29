@@ -1,0 +1,7 @@
+<p class="fw-bold fs-5">Categories</p>
+<div class="d-flex flex-column">
+  <a *ngFor="let c of catalog| async" routerLink="/home" [queryParams]="{catalog: c}"
+     class="pb-12 sec-color underline-none">{{c}}</a>
+
+
+</div>

@@ -1,0 +1,7 @@
+<div class=" bg-color poppins-font  w-100 py-3 position-sticky top-0">
+  <div class="d-flex flex-row justify-content-start px-45 py-16 gap-4 overflow-auto">
+      <a routerLink="/home" [queryParams]="{catalog: c}" *ngFor="let c of catalog | async" class="text-nowrap underline-none man-color fw-bold d-flex align-items-center gap-2" type="button">
+       {{c}}<img src="assets/images/cat-arrow.svg"/>
+      </a>
+  </div>
+</div>

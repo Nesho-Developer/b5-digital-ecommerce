@@ -1,0 +1,29 @@
+<div class="products"
+     infinite-scroll
+     (scrolled)="onScrollDown($event)">
+  <div *ngFor="let item of products" class="product-box">
+    <div class="img-badge">
+      <div class="img-background">
+        <img *ngIf="item?.thumbnail" [src]="item?.thumbnail" class="img-fluid">
+      </div>
+      <div class="tags">
+        <div *ngIf="item?.discountPercentage" class="badge-num">{{item?.discountPercentage}}</div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content-top">
+        <div class="product-title">{{item?.title}}</div>
+        <div class="description">
+       {{item?.description}}
+        </div>
+      </div>
+      <div class="content-bottom">
+          <button (click)="onAddToCart(item)" class="buy-now">Buy now</button>
+        <div class="price-content">
+          <div class="price">{{item?.price}}</div>
+          <div class="discount">{{item?.discountPercentage}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

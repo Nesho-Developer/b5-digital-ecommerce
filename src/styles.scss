@@ -1,1 +1,83 @@
 /* You can add global styles to this file, and also import other style files */
+$mainColor: #151515;
+$secColor: #6A983C;
+$bgColor: #F9F9F9;
+$open-sans-font : "Open Sans, sans-serif";
+$poppins-font : "Poppins";
+body {
+  color: $mainColor;
+  font-family: $poppins-font;
+  font-style: normal;
+  background: #FFFFFF;
+}
+button, input, optgroup, select, textarea {
+  font-family: $poppins-font;
+}
+@for $i from 1 through 100 {
+  .mt-#{$i} {
+    margin-top: #{$i}px !important;
+  }
+  .mb-#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+  .pt-#{$i} {
+    padding-top: #{$i}px !important;
+  }
+  .pb-#{$i} {
+    padding-bottom: #{$i}px !important;
+  }
+  .px-#{$i} {
+    padding-right: #{$i}px !important;
+    padding-left: #{$i}px !important;
+  }
+  .py-#{$i} {
+    padding-top: #{$i}px !important;
+    padding-bottom: #{$i}px !important;
+  }
+}
+.underline-none, .underline-none a {
+  text-decoration: none;
+  pointer-events: auto;
+}
+.man-color {
+  color: $mainColor;
+}
+.sec-color {
+  color: $secColor;
+}
+.bg-color {
+  background-color: $bgColor;
+}
+
+.sans-font {
+  font-family: $open-sans-font;
+}
+.poppins-font {
+  font-family: $poppins-font;
+}
+.pointer {
+  cursor: pointer;
+}
+.position-sticky {
+  z-index: 999;
+}
+.input-group {
+  input[type='text'] {
+    border-left: unset;
+  &:focus {
+      color: unset;
+      background-color: unset;
+    border-style: solid;
+    border-color: #ced4da;
+    border-left: unset;
+    outline: unset;
+      box-shadow: unset;
+    }
+  }
+  .dropdown-toggle {
+    border-right: unset !important;
+    &:after {
+      display: none !important;
+    }
+  }
+}
