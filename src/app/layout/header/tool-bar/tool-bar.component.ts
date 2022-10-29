@@ -4,12 +4,10 @@ import { CartService } from '../../../core/service/cart.service';
 import { Store } from '@ngrx/store';
 import {
   AppState,
-  CreateCart,
   getAppCartState,
   LoadCart,
   LoadUserCart,
 } from '../../../core/store';
-import { Actions } from '@ngrx/effects';
 import { Cart } from '../../../core/model/produect.models';
 import { ProductService } from '../../../core/service/product.service';
 import { Router, RouterLink, RouterLinkWithHref } from '@angular/router';
@@ -28,9 +26,9 @@ export class ToolBarComponent implements OnInit {
     private readonly cartService: CartService,
     private readonly productService: ProductService,
     private store: Store<AppState>,
-    private readonly _actions: Actions,
     private readonly router: Router
-  ) {
+  ) {}
+  ngOnInit(): void {
     this.loadSubscribeToCart();
     this.productService.loadCatalogs();
   }
@@ -39,7 +37,6 @@ export class ToolBarComponent implements OnInit {
     this.store.select(getAppCartState).subscribe((cart) => {
       this.cart = cart.cart;
     });
-    console.log(cartId);
     if (cartId) {
       this.store.dispatch(
         LoadCart({
@@ -58,7 +55,6 @@ export class ToolBarComponent implements OnInit {
       );
     }
   }
-  ngOnInit(): void {}
 
   onSearch(value: string) {
     this.router.navigate(['/home'], { queryParams: { search: value } }).then();

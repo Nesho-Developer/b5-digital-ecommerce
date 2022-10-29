@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../../core/model/produect.models';
 import { ProductService } from '../../../core/service/product.service';
@@ -25,9 +25,11 @@ export class ProductComponent implements OnInit {
     private readonly productService: ProductService,
     private readonly cartService: CartService,
     private store: Store<AppState>,
-    private readonly route: ActivatedRoute
-  ) {
-    route.queryParams.subscribe({
+    readonly route: ActivatedRoute
+  ) {}
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe({
       next: (res) => {
         this.products = [];
         if (res['catalog']) {
@@ -44,8 +46,6 @@ export class ProductComponent implements OnInit {
       },
     });
   }
-
-  ngOnInit(): void {}
   getAllProducts() {
     this.productService.getAllProducts(10, this.pageNumber * 10).subscribe({
       next: (res) => {

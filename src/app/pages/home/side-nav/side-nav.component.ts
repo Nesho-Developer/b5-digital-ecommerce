@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductService } from '../../../core/service/product.service';
 import { RouterLinkWithHref } from '@angular/router';
@@ -10,9 +10,7 @@ import { RouterLinkWithHref } from '@angular/router';
   templateUrl: './side-nav.component.html',
   styleUrls: ['./side-nav.component.scss'],
 })
-export class SideNavComponent implements OnInit {
+export class SideNavComponent {
   catalog = this.productService.getCatalogs();
   constructor(private readonly productService: ProductService) {}
-
-  ngOnInit(): void {}
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductService } from '../../../core/service/product.service';
 import { RouterLinkWithHref } from '@angular/router';
@@ -11,9 +11,7 @@ import { RouterLinkWithHref } from '@angular/router';
   styleUrls: ['./catalogs.component.scss'],
   host: { 'z-index': '1000' },
 })
-export class CatalogsComponent implements OnInit {
+export class CatalogsComponent {
   catalog = this.productService.getCatalogs();
   constructor(private readonly productService: ProductService) {}
-
-  ngOnInit(): void {}
 }

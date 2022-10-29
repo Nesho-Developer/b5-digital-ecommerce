@@ -1,20 +1,15 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SideNavComponent } from './side-nav.component';
+import { ProductService } from '../../../core/service/product.service';
 
 describe('SideNavComponent', () => {
   let component: SideNavComponent;
-  let fixture: ComponentFixture<SideNavComponent>;
+  let productServiceSpy: jasmine.SpyObj<ProductService>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ SideNavComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(SideNavComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    productServiceSpy = jasmine.createSpyObj('productServiceSpy', [
+      'getCatalogs',
+    ]);
+    component = new SideNavComponent(productServiceSpy);
   });
 
   it('should create', () => {

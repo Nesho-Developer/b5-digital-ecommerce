@@ -26,7 +26,6 @@ export class ProductService {
   );
 
   getAllProducts(limit = 10, skip = 10): Observable<ProductRes> {
-    console.log('clled');
     return this.http
       .get<ProductRes>(this.baseUrl, { params: { limit, skip } })
       .pipe(take(1));

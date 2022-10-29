@@ -1,20 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CatalogsComponent } from './catalogs.component';
+import { ProductService } from '../../../core/service/product.service';
 
 describe('CatalogsComponent', () => {
   let component: CatalogsComponent;
-  let fixture: ComponentFixture<CatalogsComponent>;
+  let productServiceSpy: jasmine.SpyObj<ProductService>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ CatalogsComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(CatalogsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    productServiceSpy = jasmine.createSpyObj('productServiceSpy', [
+      'getCatalogs',
+    ]);
+    component = new CatalogsComponent(productServiceSpy);
   });
 
   it('should create', () => {

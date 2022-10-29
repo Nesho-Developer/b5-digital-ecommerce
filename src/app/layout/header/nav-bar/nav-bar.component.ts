@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -6,13 +6,6 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss']
+  styleUrls: ['./nav-bar.component.scss'],
 })
-export class NavBarComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class NavBarComponent {}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
@@ -9,8 +9,4 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './main-content.component.html',
   styleUrls: ['./main-content.component.scss'],
 })
-export class MainContentComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class MainContentComponent {}
